@@ -6,53 +6,63 @@
     <link href="/css/styles.css" rel="stylesheet">
 </head>
 <style>
-    .headline{
-        height:60px;
-        width:50%;
-        text-align:left;
-        background-color:#00bfff;
-        margin:0 auto;
-        line-height:60px;
+    .wrap{
+        width: 200px;
+        height: 225px;
+        margin-top: 100px;
+        margin-left: 100px;
+
+        position: fixed;
     }
-    .hang{
-        align:center;
-        valign:middle;
-        height:50px;
-    }
+    /*.head{*/
+    /*    font-weight: bold;*/
+    /*    width: 60px;*/
+    /*    height: 40px;*/
+    /*    background-color: white;*/
+    /*    line-height: 40px;!* 行高=高度 垂直居中 *!*/
+    /*    font-size: 14px;*/
+    /*    color: #000000;!* 文字颜色 白色 *!*/
+    /*    text-align: center;!* 文本对齐方式 居中 *!*/
+    /*}*/
+    /*.list{*/
+    /*    box-sizing: border-box;!* content box css3盒模型 怪异盒 *!*/
+    /*    width: 60px;*/
+    /*    padding: 3px;*/
+    /*    margin-top: 0.5px;!* 上边距 *!*/
+    /*    margin-bottom: 0.5px;*/
+    /*    background-color: white;*/
+    /*    text-align: center;*/
+    /*    font-size: 12px;*/
+    /*    color: #9A9C9E;*/
+    /*}*/
+
 </style>
 <body>
-<div id="headline" class="headline" >
-    <h1>List</h1>
+<div class="wrap">
+    <span>News classification</span>
+    <ul th:each="topic : ${topics}">
+        <li class="list" ><a href="#m1"style="text-decoration: none;" th:text="${topic.tid}"></a></li>
+    </ul>
 </div>
-<div style="text-align: center">
-    <div  style="margin-left: 390px">
-        <table border="1" width="65%" data-pagination="true" data-side-pagination="client" data-page-size="3">
-            <thead>
-            <tr class="hang">
-                <th style="padding-right: 10px">id</th>
-                <th style="padding-right: 10px">username</th>
-                <th style="padding-right: 10px">sex</th>
-                <th style="padding-right: 10px">address</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!--each来进行for循环求值-->
-            <tr  class="hang" th:each="topic : ${topics}">
-                <th scope="row" th:text="${topic.tid}"></th>
-                <td th:text="${topic.tid}"></td>
-            </tr>
-            </tbody>
 
+    <div style="margin-left: 600px; margin-top: 100px">
+        <table>
+            <thead>
+            <th>标题</th>
+            <th>新闻类别</th>
+            <th>发布人</th>
+            <th>发布时间</th>
+            <th>操作</th>
+            </thead>
+            <tr   th:each="topic : ${topics}">                      <!-- 循环-->
+                <td th:text="${topic.tid}">    </td>    <!-- 6-2显示新闻标题的超链接，形式如http://localhost:8080/news/query?nid=1 -->
+                <td th:text="${topic.tid}">      </td>                         <!-- 显示关联的类别名称-->
+                <td th:text="${topic.tid}"></td>
+                <td th:text="${topic.tid}"></td>
+                <td><a href="#">修改</a>/<a href="#">删除</a></td>   <!-- 修改/删除超链接略去-->
+            </tr>
         </table>
-        <table border="1" width="65%">
-            <tr class="hang">
-                <th colspan="4">
-                    欢迎
-                </th>
-        </table>
-        <tr>
     </div>
-</div>
 
 </body>
 </html>
