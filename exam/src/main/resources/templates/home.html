@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
+  <head>
+    <meta charset="UTF-8" />
     <title>home</title>
-    <link href="/css/styles.css" rel="stylesheet">
-</head>
-<style>
-    .wrap{
-        width: 200px;
-        height: 225px;
-        margin-top: 100px;
-        margin-left: 100px;
+    <link href="/css/styles.css" rel="stylesheet" />
+  </head>
+  <style>
+    .wrap {
+      width: 200px;
+      height: 225px;
+      margin-top: 100px;
+      margin-left: 100px;
 
-        position: fixed;
+      position: fixed;
     }
-
-</style>
-<body>
-<div class="wrap">
-    <span>News classification</span>
-    <ul th:each="topic : ${topics}">
-        <li class="list" ><a href="#m1"style="text-decoration: none;" th:text="${topic.name}"></a></li>
-    </ul>
-</div>
-
-    <div style="margin-left: 600px; margin-top: 100px">
-        <table>
-            <thead>
-            <th>标题</th>
-            <th>新闻类别</th>
-            <th>发布人</th>
-            <th>发布时间</th>
-            <th>操作</th>
-            </thead>
-            <tr   th:each="newsinfo : ${newsinfos}">                      <!-- 循环-->
-                <td ><a th:href="@{/query(nid=${newsinfo.nid})}" th:text="${newsinfo.title}"></a> </td>    <!-- 6-2显示新闻标题的超链接，形式如http://localhost:8080/news/query?nid=1 -->
-                <td th:text="${newsinfo.namen}">      </td>                         <!-- 显示关联的类别名称-->
-                <td th:text="${newsinfo.author}"></td>
-                <td th:text="${newsinfo.createdate}"></td>
-                <td><a href="#">修改</a>/<a href="#">删除</a></td>   <!-- 修改/删除超链接略去-->
-            </tr>
-
-        </table>
+  </style>
+  <body>
+    <div class="wrap">
+      <span>News classification</span>
+      <ul th:each="topic : ${topics}">
+        <li class="list">
+          <a
+            href="#m1"
+            style="text-decoration: none"
+            th:text="${topic.name}"
+          ></a>
+        </li>
+      </ul>
     </div>
 
-</body>
+    <div style="margin-left: 600px; margin-top: 100px">
+      <table>
+        <thead>
+          <th>标题</th>
+          <th>新闻类别</th>
+          <th>发布人</th>
+          <th>发布时间</th>
+          <th>操作</th>
+        </thead>
+        <tr th:each="newsinfo : ${newsinfos}">
+          <!-- 循环-->
+          <td>
+            <a
+              th:href="@{/query(nid=${newsinfo.nid})}"
+              th:text="${newsinfo.title}"
+            ></a>
+          </td>
+          <!-- 6-2显示新闻标题的超链接，形式如http://localhost:8080/news/query?nid=1 -->
+          <td th:text="${newsinfo.namen}"></td>
+          <!-- 显示关联的类别名称-->
+          <td th:text="${newsinfo.author}"></td>
+          <td th:text="${newsinfo.createdate}"></td>
+          <td><a href="#">修改</a>/<a href="#">删除</a></td>
+          <!-- 修改/删除超链接略去-->
+        </tr>
+      </table>
+    </div>
+  </body>
 </html>
-
