@@ -7,5 +7,7 @@ import java.util.List;
 public interface ITopicService {
     List<Topic> findAllTopic();
 
-    String findtopic();
+//    Topic getOne(int  tid);
+
+//    String findtopic();
 }

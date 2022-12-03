@@ -14,34 +14,13 @@
 
         position: fixed;
     }
-    /*.head{*/
-    /*    font-weight: bold;*/
-    /*    width: 60px;*/
-    /*    height: 40px;*/
-    /*    background-color: white;*/
-    /*    line-height: 40px;!* 行高=高度 垂直居中 *!*/
-    /*    font-size: 14px;*/
-    /*    color: #000000;!* 文字颜色 白色 *!*/
-    /*    text-align: center;!* 文本对齐方式 居中 *!*/
-    /*}*/
-    /*.list{*/
-    /*    box-sizing: border-box;!* content box css3盒模型 怪异盒 *!*/
-    /*    width: 60px;*/
-    /*    padding: 3px;*/
-    /*    margin-top: 0.5px;!* 上边距 *!*/
-    /*    margin-bottom: 0.5px;*/
-    /*    background-color: white;*/
-    /*    text-align: center;*/
-    /*    font-size: 12px;*/
-    /*    color: #9A9C9E;*/
-    /*}*/
 
 </style>
 <body>
 <div class="wrap">
     <span>News classification</span>
     <ul th:each="topic : ${topics}">
-        <li class="list" ><a href="#m1"style="text-decoration: none;" th:text="${topic.tid}"></a></li>
+        <li class="list" ><a href="#m1"style="text-decoration: none;" th:text="${topic.name}"></a></li>
     </ul>
 </div>
 
@@ -54,11 +33,11 @@
             <th>发布时间</th>
             <th>操作</th>
             </thead>
-            <tr   th:each="topic : ${topics}">                      <!-- 循环-->
-                <td th:text="${topic.tid}">    </td>    <!-- 6-2显示新闻标题的超链接，形式如http://localhost:8080/news/query?nid=1 -->
-                <td th:text="${topic.tid}">      </td>                         <!-- 显示关联的类别名称-->
-                <td th:text="${topic.tid}"></td>
-                <td th:text="${topic.tid}"></td>
+            <tr   th:each="newsinfo : ${newsinfos}">                      <!-- 循环-->
+                <td ><a th:href="@{/query(nid=${newsinfo.nid})}" th:text="${newsinfo.title}"></a> </td>    <!-- 6-2显示新闻标题的超链接，形式如http://localhost:8080/news/query?nid=1 -->
+                <td th:text="${newsinfo.namen}">      </td>                         <!-- 显示关联的类别名称-->
+                <td th:text="${newsinfo.author}"></td>
+                <td th:text="${newsinfo.createdate}"></td>
                 <td><a href="#">修改</a>/<a href="#">删除</a></td>   <!-- 修改/删除超链接略去-->
             </tr>
         </table>
