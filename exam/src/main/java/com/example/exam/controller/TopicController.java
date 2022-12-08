@@ -17,25 +17,27 @@ public class TopicController {
     @Autowired
     INewsinfoService newsinfoService;
 
-    @RequestMapping("/home")
+    @RequestMapping("/index")
     public String test2(Model model){
 //        int tid = 1;
         List<Topic> topics = topicService.findAllTopic();
         List<Newsinfo> newsinfos = newsinfoService.findAllNewsinfo();
 //        List<Topic> tops = newsinfoService.findByName(tid);
 //        model.addAttribute("tops", tops);
-
 //        System.out.println(newsinfos);
         model.addAttribute("topics", topics);
         model.addAttribute("newsinfos", newsinfos);
-        return "home";
+        return "index";
     }
     @RequestMapping("/query")
     public String test3(int nid, Model model){
         Newsinfo newsinfo;
+        List<Topic> topics = topicService.findAllTopic();
+        List<Newsinfo> newsinfos = newsinfoService.findAllNewsinfo();
         newsinfo=newsinfoService.findbyid(nid);
+        model.addAttribute("topics", topics);
+        model.addAttribute("newsinfos", newsinfos);
         model.addAttribute("newsinfo", newsinfo);
-//        System.out.println(newsinfo);
          return "view";
     }
 }

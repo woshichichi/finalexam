@@ -1,13 +1,106 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>index</title>
+    <meta charset="UTF-8" />
+    <title>home</title>
+    <link href="/css/styles.css" rel="stylesheet" />
 </head>
+<style>
+    .wrap {
+        width: 150px;
+        height: 225px;
+        margin-top: 20px;
+        margin-left: 300px;
+        position: fixed;
+        background:linear-gradient(white,grey);
+        border: 1px solid;
+        border-radius: 5px;
+    }
+    .pic {
+        height:100px;
+        margin-left: 300px;
+    }
+    .main {
+        width: 800px;
+        height: 255px;
+        margin-left: 480px;
+
+    }
+    .demo {
+        width:150px;
+        height:30px;
+        line-height:30px;
+        text-align:center;
+        background:#D0D0D0;
+        border: 1px solid;
+        border-radius: 5px;
+        margin-left: 300px;
+        display:inline;
+        float:left;
+    }
+    td,th{
+        border-bottom:1px solid #ddd;
+    }
+    table{
+        border-collapse:collapse;
+    }
+    .bar{
+        width: 720px;
+        height:20px;
+        margin-left: 480px;
+        text-align:right;
+        background:#B9B9FF;
+    }
+</style>
 <body>
-    <h1>Home</h1>
+<!--导航图片-->
+<div class="pic" >
+    <img src="/img/news0.jpeg" width="100px" height="100px">
+    <img src="/img/news.jpeg"  width="800px" height="100px">
+</div>
+<hr style="height:1px;width:900px;border:none;border-top:1px solid #555555;" />
+<!--导航栏-->
+<div class="demo">News classification</div> <div class="bar">分类新闻</div>
+<div class="wrap">
+    <ul th:each="topic : ${topics}">
+        <li class="list">
+            <a
+                    href="#m1"
+                    style="text-decoration: none"
+                    th:text="${topic.name}"
+            ></a>
+        </li>
+    </ul>
+</div>
+
+<!--主表格页面-->
+
+<div class="main">
+    <table style="height:50px;border-width: 1px;" >
+        <thead>
+        <th style="width:250px">标题</th>
+        <th style="width:150px">新闻类别</th>
+        <th style="width:100px">发布人</th>
+        <th style="width:100px">发布时间</th>
+        <th style="width:100px">操作</th>
+        </thead>
+        <tr th:each="newsinfo : ${newsinfos}">
+            <!-- 循环-->
+            <td>
+                <a
+                        th:href="@{/query(nid=${newsinfo.nid})}"
+                        th:text="${newsinfo.title}"
+                ></a>
+            </td>
+            <!-- 6-2显示新闻标题的超链接，形式如http://localhost:8080/news/query?nid=1 -->
+            <td   th:text="${newsinfo.namen}"></td>
+            <!-- 显示关联的类别名称-->
+            <td th:text="${newsinfo.author}"></td>
+            <td th:text="${newsinfo.createdate}"></td>
+            <td><a href="#">修改</a>/<a href="#">删除</a></td>
+            <!-- 修改/删除超链接略去-->
+        </tr>
+    </table>
+</div>
 </body>
 </html>
