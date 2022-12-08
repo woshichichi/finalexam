@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Mapper
 @Repository
-public interface NewsinfoMapper {
+public interface NewsMapper {
     @Select("select * from newsinfo where nid = #{nid}")
     public Newsinfo getOne(int nid);
 

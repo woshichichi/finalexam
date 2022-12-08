@@ -5,7 +5,7 @@ import com.example.ji.entity.Newsinfo;
 
 import java.util.List;
 
-public interface INewsinfoService {
+public interface INewsService {
     List<Newsinfo> findAllNewsinfo();
 
     Newsinfo findbyid(int nid);

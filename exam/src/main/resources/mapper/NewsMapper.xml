@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.exam.mapper.NewsinfoMapper">
+<mapper namespace="com.example.ji.mapper.NewsMapper">
     <update id="update" parameterType="Newsinfo">
         UPDATE newsinfo SET title = #{title}, author = #{author}, content = #{content} Where
         nid = #{nid}

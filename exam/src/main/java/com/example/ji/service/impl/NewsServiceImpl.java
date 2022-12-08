@@ -1,21 +1,21 @@
 package com.example.ji.service.impl;
 
-import com.example.ji.dao.INewsinfo;
+import com.example.ji.dao.INewsDao;
 import com.example.ji.entity.Newsinfo;
-import com.example.ji.mapper.NewsinfoMapper;
-import com.example.ji.service.INewsinfoService;
+import com.example.ji.mapper.NewsMapper;
+import com.example.ji.service.INewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class NewsinfoServiceImpl implements INewsinfoService {
+public class NewsServiceImpl implements INewsService {
     @Autowired
-    private INewsinfo newsinfo;
+    private INewsDao newsinfo;
 
     @Autowired
-    private NewsinfoMapper newsinfoMapper;
+    private NewsMapper newsMapper;
 
     @Override
     public List<Newsinfo> findAllNewsinfo() {
@@ -24,17 +24,17 @@ public class NewsinfoServiceImpl implements INewsinfoService {
 
     @Override
     public Newsinfo findbyid(int nid) {
-        return newsinfoMapper.getOne(nid);
+        return newsMapper.getOne(nid);
     }
 
     @Override
     public int deleteNewsById(int nid) {
-        return newsinfoMapper.deleteNewsById(nid);
+        return newsMapper.deleteNewsById(nid);
     }
 
     @Override
     public int update(Newsinfo newsinfo) {
-        return newsinfoMapper.update(newsinfo);
+        return newsMapper.update(newsinfo);
     }
 
 

@@ -14,10 +14,7 @@ public class Newsinfo {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Integer nid;
     private String title;
-
-    @JsonFormat(pattern="yyyy-MM-dd")
     private Date createdate;
-
     private String author;
     private String content;
     private Integer tid;
