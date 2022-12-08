@@ -3,36 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>修改</title>
+    <link href="/css/styles.css" rel="stylesheet" />
 </head>
+<style>
+    .pic {
+        height:100px;
+        margin-left: 300px;
+    }
+    .main {
+        width: 900px;
+        height: 255px;
+        margin-left: 300px;
+        text-align: center;
+    }
+</style>
 <body>
-<form action="/update"  method="post" id="form1">
-<!--    <input th:value="${newsinfo.nid}" type="text" name="id"  id="id" hidden/>-->
-    <table width="50%">
-        <tr>
-            <td colspan="2"><h3 style="text-align: center">Modify News</h3>
-            </td>
+<!--导航图片-->
+<div class="pic" >
+    <img src="/img/news0.jpeg" width="100px" height="100px">
+    <img src="/img/news.jpeg"  width="800px" height="100px">
+</div>
+<hr style="height:1px;width:900px;border:none;border-top:1px solid #555555;" />
+<div class="main">
+    <center>
+        <form action="/update"  method="post" id="form1">
+            <!--    <input th:value="${newsinfo.nid}" type="text" name="id"  id="id" hidden/>-->
+            <table width="50%"   style="">
+                <tr>
+                    <td colspan="2" style="text-align: center"><h3 style="text-align: center">Modify News</h3>
+                    </td>
 
-        </tr>
-        <tr>
-            <td width="30%">Title</td>
-            <td width="70%"><input th:value="${newsinfo.title}" type="text" name="districtName"
-                                   id="districtName"/></td>
-        </tr>
-        <tr>
-            <td width="30%">Author</td>
-            <td width="70%"><input th:value="${newsinfo.author}" type="text" name="monitorTime"
-                                   id="monitorTime"/></td>
-        </tr>
-        <tr>
-            <td width="30%">Content</td>
-            <td width="70%"><input th:value="${newsinfo.content}"  type="text" name="rain" id="rain"/></td>
-        </tr>
-        <tr>
-            <td colspan="2"><input type="submit" id="btn2" value="保存"/>
-                <a th:href="@{/index}"><input type="button" value="返回" id="btn1"/></a>
-            </td>
-        </tr>
-    </table>
-</form>
+                </tr>
+                <tr>
+                    <td width="30%">Title</td>
+                    <td width="70%"><input th:value="${newsinfo.title}" type="text" name="districtName"
+                                           id="districtName"/></td>
+                </tr>
+                <tr>
+                    <td width="30%">Author</td>
+                    <td width="70%"><input th:value="${newsinfo.author}" type="text" name="monitorTime"
+                                           id="monitorTime"/></td>
+                </tr>
+                <tr>
+                    <td width="30%">Content</td>
+                    <td width="70%"><input th:value="${newsinfo.content}"  type="text" name="rain" id="rain"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" id="btn2" value="保存"/>
+                        <a th:href="@{/index}"><input type="button" value="返回" id="btn1"/></a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+
+</div>
+
 </body>
 </html>
