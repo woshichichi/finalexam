@@ -1,7 +1,7 @@
-package com.example.exam.service;
+package com.example.ji.service;
 
-import com.example.exam.entity.Newsinfo;
-import com.example.exam.entity.Topic;
+import com.example.ji.entity.Newsinfo;
+
 
 import java.util.List;
 

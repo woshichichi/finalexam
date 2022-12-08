@@ -1,9 +1,9 @@
-package com.example.exam.controller;
+package com.example.ji.controller;
 
-import com.example.exam.entity.Newsinfo;
-import com.example.exam.entity.Topic;
-import com.example.exam.service.INewsinfoService;
-import com.example.exam.service.ITopicService;
+import com.example.ji.entity.Newsinfo;
+import com.example.ji.entity.Topic;
+import com.example.ji.service.INewsinfoService;
+import com.example.ji.service.ITopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,12 +22,8 @@ public class TopicController {
 
     @RequestMapping("/index")
     public String test2(Model model){
-//        int tid = 1;
         List<Topic> topics = topicService.findAllTopic();
         List<Newsinfo> newsinfos = newsinfoService.findAllNewsinfo();
-//        List<Topic> tops = newsinfoService.findByName(tid);
-//        model.addAttribute("tops", tops);
-//        System.out.println(newsinfos);
         model.addAttribute("topics", topics);
         model.addAttribute("newsinfos", newsinfos);
         return "index";

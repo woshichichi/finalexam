@@ -1,18 +1,17 @@
-package com.example.exam.mapper;
+package com.example.ji.mapper;
 
-import com.example.exam.entity.Newsinfo;
-import com.example.exam.entity.Topic;
+import com.example.ji.entity.Newsinfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+
 
 @Mapper
 @Repository
 public interface NewsinfoMapper {
     @Select("select * from newsinfo where nid = #{nid}")
-    public Newsinfo getOne(int nid);  //根据id获取一条新闻类别
+    public Newsinfo getOne(int nid);
 
     public int deleteNewsById(int nid);
 

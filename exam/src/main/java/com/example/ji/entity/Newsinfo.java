@@ -1,4 +1,4 @@
-package com.example.exam.entity;
+package com.example.ji.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
@@ -23,13 +23,4 @@ public class Newsinfo {
     private Integer tid;
     private String namen;
 
-    public Newsinfo(){
-
-    }
-
-    public Newsinfo(String title, String author, String content){
-        this.title = title;
-        this.author = author;
-        this.content = content;
-    }
 }

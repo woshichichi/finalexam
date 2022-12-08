@@ -53,28 +53,24 @@
     }
 </style>
 <body>
-<!--导航图片-->
 <div class="pic" >
     <img src="/img/news0.jpeg" width="100px" height="100px">
     <img src="/img/news.jpeg"  width="800px" height="100px">
 </div>
 <hr style="height:1px;width:900px;border:none;border-top:1px solid #555555;" />
-<!--导航栏-->
-<div class="demo">News classification</div> <div class="bar">分类新闻</div>
+
+<div class="demo">新闻分类</div> <div class="bar">分类新闻</div>
 <div class="wrap">
     <ul th:each="topic : ${topics}">
         <li class="list">
             <a
-                    href="#m1"
+                    href="#"
                     style="text-decoration: none"
                     th:text="${topic.name}"
             ></a>
         </li>
     </ul>
 </div>
-
-<!--主表格页面-->
-
 <div class="main">
     <table style="height:50px;border-width: 1px;" >
         <thead>
@@ -85,20 +81,16 @@
         <th style="width:100px">操作</th>
         </thead>
         <tr th:each="newsinfo : ${newsinfos}">
-            <!-- 循环-->
             <td>
                 <a
                         th:href="@{/query(nid=${newsinfo.nid})}"
                         th:text="${newsinfo.title}"
                 ></a>
             </td>
-            <!-- 6-2显示新闻标题的超链接，形式如http://localhost:8080/news/query?nid=1 -->
             <td   th:text="${newsinfo.namen}"></td>
-            <!-- 显示关联的类别名称-->
             <td th:text="${newsinfo.author}"></td>
             <td th:text="${newsinfo.createdate}"></td>
             <td><a th:href="@{/modify/}+${newsinfo.nid}">修改</a>/<a href="#" th:href="@{/delete/}+${newsinfo.nid}">删除</a></td>
-            <!-- 修改/删除超链接略去-->
         </tr>
     </table>
 </div>

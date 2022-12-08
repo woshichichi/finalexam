@@ -1,7 +1,6 @@
-package com.example.exam.dao;
+package com.example.ji.dao;
 
-import com.example.exam.entity.Newsinfo;
-import com.example.exam.entity.Topic;
+import com.example.ji.entity.Newsinfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

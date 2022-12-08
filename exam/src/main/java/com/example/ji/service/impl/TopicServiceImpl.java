@@ -1,9 +1,9 @@
-package com.example.exam.service.impl;
+package com.example.ji.service.impl;
 
-import com.example.exam.dao.ITopicDao;
-import com.example.exam.entity.Topic;
-import com.example.exam.mapper.NewsinfoMapper;
-import com.example.exam.service.ITopicService;
+import com.example.ji.dao.ITopicDao;
+import com.example.ji.entity.Topic;
+import com.example.ji.mapper.NewsinfoMapper;
+import com.example.ji.service.ITopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,14 +20,4 @@ public class TopicServiceImpl implements ITopicService {
     public List<Topic> findAllTopic() {
         return topicDao.findAll();
     }
-
-//    @Override
-//    public Topic getOne(int tid) {
-//        return topicMapper.getOne(tid);
-//    }
-
-//    @Override
-//    public String findtopic() {
-//        return null;
-//    }
 }

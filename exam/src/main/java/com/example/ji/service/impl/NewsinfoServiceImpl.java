@@ -1,12 +1,9 @@
-package com.example.exam.service.impl;
+package com.example.ji.service.impl;
 
-import com.example.exam.dao.INewsinfo;
-import com.example.exam.dao.ITopicDao;
-import com.example.exam.entity.Newsinfo;
-import com.example.exam.entity.Topic;
-import com.example.exam.mapper.NewsinfoMapper;
-import com.example.exam.service.INewsinfoService;
-import com.example.exam.service.ITopicService;
+import com.example.ji.dao.INewsinfo;
+import com.example.ji.entity.Newsinfo;
+import com.example.ji.mapper.NewsinfoMapper;
+import com.example.ji.service.INewsinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
