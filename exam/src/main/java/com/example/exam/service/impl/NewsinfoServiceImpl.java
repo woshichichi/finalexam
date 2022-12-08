@@ -35,5 +35,10 @@ public class NewsinfoServiceImpl implements INewsinfoService {
         return newsinfoMapper.deleteNewsById(nid);
     }
 
+    @Override
+    public int update(Newsinfo newsinfo) {
+        return newsinfoMapper.update(newsinfo);
+    }
+
 
 }

@@ -97,7 +97,7 @@
             <!-- 显示关联的类别名称-->
             <td th:text="${newsinfo.author}"></td>
             <td th:text="${newsinfo.createdate}"></td>
-            <td><a href="#">修改</a>/<a href="#" th:href="@{/delete/}+${newsinfo.nid}">删除</a></td>
+            <td><a th:href="@{/modify/}+${newsinfo.nid}">修改</a>/<a href="#" th:href="@{/delete/}+${newsinfo.nid}">删除</a></td>
             <!-- 修改/删除超链接略去-->
         </tr>
     </table>

@@ -15,4 +15,6 @@ public interface NewsinfoMapper {
     public Newsinfo getOne(int nid);  //根据id获取一条新闻类别
 
     public int deleteNewsById(int nid);
+
+    public int update(Newsinfo newsinfo);
 }

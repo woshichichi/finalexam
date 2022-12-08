@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+</head>
+<body>
+<form action="/update"  method="post" id="form1">
+<!--    <input th:value="${newsinfo.nid}" type="text" name="id"  id="id" hidden/>-->
+    <table width="50%">
+        <tr>
+            <td colspan="2"><h3 style="text-align: center">Modify News</h3>
+            </td>
+
+        </tr>
+        <tr>
+            <td width="30%">Title</td>
+            <td width="70%"><input th:value="${newsinfo.title}" type="text" name="districtName"
+                                   id="districtName"/></td>
+        </tr>
+        <tr>
+            <td width="30%">Author</td>
+            <td width="70%"><input th:value="${newsinfo.author}" type="text" name="monitorTime"
+                                   id="monitorTime"/></td>
+        </tr>
+        <tr>
+            <td width="30%">Content</td>
+            <td width="70%"><input th:value="${newsinfo.content}"  type="text" name="rain" id="rain"/></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" id="btn2" value="保存"/>
+                <a th:href="@{/index}"><input type="button" value="返回" id="btn1"/></a>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
