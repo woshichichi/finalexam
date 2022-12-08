@@ -5,4 +5,7 @@
 <mapper namespace="com.example.exam.mapper.NewsinfoMapper">
 
 
+    <delete id="deleteNewsById">
+        DELETE FROM `newsinfo` WHERE `nid`=#{nid}
+    </delete>
 </mapper>

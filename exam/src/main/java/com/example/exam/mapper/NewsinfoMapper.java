@@ -13,4 +13,6 @@ import java.util.List;
 public interface NewsinfoMapper {
     @Select("select * from newsinfo where nid = #{nid}")
     public Newsinfo getOne(int nid);  //根据id获取一条新闻类别
+
+    public int deleteNewsById(int nid);
 }

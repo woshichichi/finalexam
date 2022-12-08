@@ -9,4 +9,6 @@ public interface INewsinfoService {
     List<Newsinfo> findAllNewsinfo();
 
     Newsinfo findbyid(int nid);
+
+    public int deleteNewsById(int nid);
 }
